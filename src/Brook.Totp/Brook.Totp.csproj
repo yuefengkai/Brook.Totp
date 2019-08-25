@@ -10,7 +10,7 @@ From AspNetCore.Totp</Description>
     <AssemblyName>Brook.Totp</AssemblyName>
     <PackageId>Brook.Totp</PackageId>
     <PackageTags>one time password;totp;google authenticator;authenticator;asp.net core;totp;otp;multi-factor;two-factor;2fa;2factor;mfa;security;oath;protection;authentication</PackageTags>
-    <PackageProjectUrl></PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/yuefengkai/Brook.Totp</PackageProjectUrl>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
@@ -18,6 +18,8 @@ From AspNetCore.Totp</Description>
     <RepositoryUrl></RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <PackageIconUrl>https://is3-ssl.mzstatic.com/image/thumb/Purple117/v4/85/f5/8a/85f58aa7-1940-a35b-2501-7caea2b54e96/source/512x512bb.jpg</PackageIconUrl>
+    <NeutralLanguage>zh</NeutralLanguage>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/yuefengkai/Brook.Totp/master/LICENSE</PackageLicenseUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
