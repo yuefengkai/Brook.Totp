@@ -22,19 +22,19 @@ https://www.cnblogs.com/yuefengkai/p/11408339.html
 -------
 说明一下为什么要用`AspNetCore.Totp`修改并且重新打包`Brook.Totp`因`AspNetCore.Totp`在生成二维码链接时会访问404(google.com)网站,国内基本无法使用，**这很不清真**，还有就是注入需要注入接口和实现类，使用起来很繁琐，所以才萌生了让使用起来更方便，并且不依赖Google生成二维码
 1. 生成二维码
-```  accountIdentity = accountIdentity.Replace(" ", "");
+```  
+accountIdentity = accountIdentity.Replace(" ", "");
             var encodedSecretKey = Base32.Encode(accountSecretKey);
             var provisionUrl = UrlEncoder.Encode(string.Format("otpauth://totp/{0}?secret={1}&issuer={2}", accountIdentity, encodedSecretKey, UrlEncoder.Encode(issuer)));
             var protocol = useHttps ? "https" : "http";
             var url = $"{protocol}://chart.googleapis.com/chart?cht=qr&chs={qrCodeWidth}x{qrCodeHeight}&chl={provisionUrl}";
-
             var totpSetup = new TotpSetup
             {
                 QrCodeImage = this.GetQrImage(url),
                 ManualSetupKey = encodedSecretKey
             };
 ```
-1. 注入方式
+2. 注入方式
 Startup注入
 ```
 services.AddSingleton<ITotpSetupGenerator, TotpSetupGenerator>();
@@ -58,7 +58,7 @@ Controller注入
 
 三. Brook.Totp
 -------            
-1. 二维码使用了`QRCoder`来生成二维码,不依赖外部网络
+1. 二维码使用`QRCoder`来生成,不依赖外部网络
 ```
         /// <summary>
         /// 生成二维码
@@ -176,5 +176,4 @@ public async Task<IActionResult> Valid(int code)
 以上所有源代码已开源在 https://github.com/yuefengkai/Brook.Totp
 如果觉得有用请给我个Start!
 > 作者：Brook（高增智）
-
 
