@@ -13,7 +13,7 @@ https://www.cnblogs.com/yuefengkai/p/11408339.html
 双因素认证
 ----
 双因素身份认证就是通过你所知道再加上你所能拥有的这二个要素组合到一起才能发挥作用的身份认证系统。双因素认证是一种采用时间同步技术的系统，采用了基于时间、事件和密钥三变量而产生的一次性密码来代替传统的静态密码。每个动态密码卡都有一个唯一的密钥，该密钥同时存放在服务器端，每次认证时动态密码卡与服务器分别根据同样的密钥，同样的随机参数（时间、事件）和同样的算法计算了认证的动态密码，从而确保密码的一致性，从而实现了用户的认证。就像我们去银行办卡送的口令牌.
-![](https://img2018.cnblogs.com/blog/286805/201908/286805-20190825165127088-546196267.jpg)
+![](https://github.com/yuefengkai/Brook.Totp/blob/master/assets/1.jpg?raw=true)
 一. 前言
 ------
 最近公司内部SSO登录一直在找一种安全的方式，目前已实现方案：账号密码登录以及手机验证码登录，通过Apollo切换不同的登录方式，想起18年看到[AspNetCore.Totp](https://github.com/damirkusar/AspNetCore.Totp)并也编写了Demo[dotNetCore-2FA](https://github.com/yuefengkai/dotNetCore-2FA)登录,将之前写的再完善并且在此记录和分析，希望对大家有些帮助。
@@ -98,14 +98,14 @@ public AccountController(ITotp totp)
 五. 完整流程效果图
 -----
 使用Microsoft Authenticator 
-![](https://img2018.cnblogs.com/blog/286805/201908/286805-20190825161716067-1008773771.jpg)
+![](https://github.com/yuefengkai/Brook.Totp/blob/master/assets/7.jpg?raw=true)
 
 1. 正常登录
-![](https://img2018.cnblogs.com/blog/286805/201908/286805-20190825161708371-377782757.jpg)
+![](https://github.com/yuefengkai/Brook.Totp/blob/master/assets/2.jpg?raw=true)
 2. 登录成功后绑定 
-![](https://img2018.cnblogs.com/blog/286805/201908/286805-20190825161659842-1973201473.jpg)
+![](https://github.com/yuefengkai/Brook.Totp/blob/master/assets/3.jpg?raw=true)
 3. 绑定后再次登录
-![](https://img2018.cnblogs.com/blog/286805/201908/286805-20190825161652177-801944985.jpg)
+![](https://github.com/yuefengkai/Brook.Totp/blob/master/assets/4.jpg?raw=true)
 
 六.如何使用
 ------
@@ -117,7 +117,7 @@ Demo中使用了
 
 下方只展示部分代码
 1. 新建netCoreMVC项目添加Nuget包`Brook.Totp`
-![](https://img2018.cnblogs.com/blog/286805/201908/286805-20190825161642333-432324207.jpg)
+![](https://github.com/yuefengkai/Brook.Totp/blob/master/assets/5.jpg?raw=true)
 1. Startup注入
 ```
 services.AddMemoryCache();
