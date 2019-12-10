@@ -1,4 +1,5 @@
-# Brook.Totp
+# Brook.Totp [![NuGet](https://img.shields.io/nuget/v/Brook.Totp.svg)](https://nuget.org/packages/Brook.Totp)
+
 > The code part of this repository comes from AspNetCore.Totp
 
 ------------
